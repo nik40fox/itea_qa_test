@@ -42,7 +42,6 @@ public class SearchResults extends BasePage {
     }
 
     public int numberOfResults(){
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         return searchResultList.size();
     }
 
@@ -75,7 +74,6 @@ public class SearchResults extends BasePage {
      */
     public SearchResults goToNextPage(){
         secondPage.click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         return new SearchResults();
     }
 
