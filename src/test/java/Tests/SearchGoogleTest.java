@@ -21,9 +21,14 @@ public class SearchGoogleTest {
         Assert.assertTrue(searchResults.isSearchTermContained(searchTerm), "not every result contains search term");
 
         SearchResults searchResults2 = searchResults.goToNextPage();
-
-        //without next 2 lines test passes
-        //in next lines test asserts list from first page
+        
+        //works with sleep
+        try {
+            sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
         Assert.assertEquals(searchResults2.numberOfResults(), 10, "nuber of results expected to be 10 on second page");
         Assert.assertTrue(searchResults2.isSearchTermContained(searchTerm), "not every result contains search term");
 
