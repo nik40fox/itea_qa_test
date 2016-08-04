@@ -5,6 +5,8 @@ import Pages.StartPageGoogle;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static java.lang.Thread.sleep;
+
 /**
  * Created by Nikolay on 04.08.2016.
  */
@@ -22,8 +24,15 @@ public class SearchGoogleTest {
 
         SearchResults searchResults2 = searchResults.goToNextPage();
 
-        //Assert.assertEquals(searchResults2.numberOfResults(), 10, "nuber of results expected to be 10 on second page");
-        //Assert.assertTrue(searchResults2.isSearchTermContained(searchTerm), "not every result contains search term");
+        //works with sleep
+        try {
+            sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Assert.assertEquals(searchResults2.numberOfResults(), 10, "nuber of results expected to be 10 on second page");
+        Assert.assertTrue(searchResults2.isSearchTermContained(searchTerm), "not every result contains search term");
 
     }
 

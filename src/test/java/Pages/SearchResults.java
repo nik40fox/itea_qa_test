@@ -1,15 +1,16 @@
 package Pages;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+        import org.openqa.selenium.Keys;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.support.FindBy;
+        import org.openqa.selenium.support.PageFactory;
+        import org.openqa.selenium.support.ui.ExpectedConditions;
+
+        import java.util.ArrayList;
+        import java.util.Iterator;
+        import java.util.List;
+        import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Nikolay on 04.08.2016.
@@ -42,7 +43,6 @@ public class SearchResults extends BasePage {
     }
 
     public int numberOfResults(){
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         return searchResultList.size();
     }
 
@@ -75,7 +75,6 @@ public class SearchResults extends BasePage {
      */
     public SearchResults goToNextPage(){
         secondPage.click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         return new SearchResults();
     }
 
